@@ -14,3 +14,4 @@ EXPOSE 8080
 
 ENV AB_JOLOKIA_OFF=""
 ENV JAVA_APP_JAR="/deployments/hacbs-test.jar"
+
