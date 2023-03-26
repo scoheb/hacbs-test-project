@@ -37,6 +37,13 @@ spec:
       taskRef:
         bundle: quay.io/redhat-appstudio-tekton-catalog/task-summary:0.1@sha256:c0f66b28c338426774e34a8d4a00349fbab798b19df5841a95727148d5ef3c65
         name: summary
+    - name: wait
+      image: bitnami/kubectl:latest
+      script: |
+        #!/bin/sh
+        echo "waiting for cm/demo-blocker in user1-tenant"
+        kubectl wait --for=delete cm/demo-blocker -n user1-tenant --timeout=300s 
+        echo "done"
     params:
     - description: Source Repository URL
       name: git-url
