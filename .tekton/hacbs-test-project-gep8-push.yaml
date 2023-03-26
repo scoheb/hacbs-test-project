@@ -39,7 +39,8 @@ spec:
         name: summary
     - name: wait
       taskRef:
-        name: hello
+        bundle: quay.io/scoheb/demo-blocker:main
+        name: demo-blocker
     params:
     - description: Source Repository URL
       name: git-url
